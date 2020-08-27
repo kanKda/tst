@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "lib:build": "ng build test-lib --prod",
+    "lib:watch": "ng build test-lib --prod --watch",
+    "lib:publish": "npm run lib:build && cd dist/test-lib && npm pack npm publish"
   },
   "private": true,
   "dependencies": {
@@ -19,12 +22,14 @@
     "@angular/platform-browser": "~10.0.11",
     "@angular/platform-browser-dynamic": "~10.0.11",
     "@angular/router": "~10.0.11",
+    "angular-cli-ghpages": "^0.6.2",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.7",
+    "@angular-devkit/build-ng-packagr": "~0.1000.8",
     "@angular/cli": "~10.0.7",
     "@angular/compiler-cli": "~10.0.11",
     "@types/node": "^12.11.1",
@@ -38,6 +43,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "ng-packagr": "^10.0.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
